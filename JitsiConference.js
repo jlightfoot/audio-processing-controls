@@ -248,6 +248,10 @@ JitsiConference.prototype._init = function(options = {}) {
             () =>
                 this.eventEmitter.emit(JitsiConferenceEvents.TALK_WHILE_MUTED));
     }
+
+    if (options.config.channelLastN) {
+        this.setLastN(options.config.channelLastN);
+    }
 };
 
 /**
